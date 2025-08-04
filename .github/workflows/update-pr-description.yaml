@@ -6,7 +6,7 @@ on:
 
 jobs:
   update-pr-description:
-    if: github.event.comment.user.login == 'webteam-app'
+    # if: github.event.comment.user.login == 'webteam-app'
     runs-on: ubuntu-latest
 
     steps:

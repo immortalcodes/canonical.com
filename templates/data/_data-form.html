@@ -8,7 +8,7 @@
             <p>Fill in this form and we'll be in touch within one working day.</p>
           </div>
           <div class="col">
-            <button class="p-modal__close p-modal-close-button "
+            <button class="p-modal__close p-modal-close-button js-close-modal "
                     aria-controls="data-fabric-modal"
                     aria-label="Close active modal"
                     style="margin-top: 0">Close</button>
@@ -35,11 +35,11 @@
                 <input required id="lastName" name="lastName" maxlength="255" type="text" />
               </div>
               <div class="p-section--shallow">
-                <label for="company">Company name*:</label>
+                <label class="is-required" for="company">Company name:</label>
                 <input required id="company" name="company" maxlength="255" type="text" />
               </div>
               <div class="p-section--shallow">
-                <label for="title">Job title*:</label>
+                <label class="is-required" for="title">Job title:</label>
                 <input required id="title" name="title" maxlength="255" type="text" />
               </div>
               <div class="p-section--shallow">
@@ -67,7 +67,7 @@
                 </label>
               </div>
               <div class="p-section--shallow">
-                By submitting this form, I confirm that I have read and agree to <a href="https://ubuntu.com/legal/data-privacy/contact" target="_blank">Canonical's Privacy Notice</a> and <a href="https://ubuntu.com/legal/data-privacy" target="_blank">Privacy Policy</a>.
+                By submitting this form, I confirm that I have read and agree to <a href="/legal/data-privacy/contact" target="_blank">Canonical's Privacy Notice</a> and <a href="/legal/data-privacy" target="_blank">Privacy Policy</a>.
               </div>
               {# These are honey pot fields to catch bots #}
               <div class="u-off-screen">

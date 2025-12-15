@@ -6,7 +6,7 @@
        aria-labelledby="modal-title"
        aria-describedby="modal-description">
     <header class="p-modal__header" style="display: block; border-bottom: 0">
-      <button class="p-modal__close"
+      <button class="p-modal__close p-modal-close-button js-close-modal"
               aria-label="Close active modal"
               aria-controls="observability-managed-modal"
               style="margin-left: -1rem">Close</button>
@@ -177,8 +177,8 @@
                   <input required id="company" name="company" maxlength="255" type="text" />
                 </li>
                 <li class="p-list__item">
-                  <label for="jobTitle" class="is-required">Job title:</label>
-                  <input required id="jobTitle" name="title" maxlength="255" type="text" />
+                  <label for="title" class="is-required">Job title:</label>
+                  <input required id="title" name="title" maxlength="255" type="text" />
                 </li>
                 <li class="p-list__item">
                   <label class="p-checkbox">

@@ -3,6 +3,7 @@
   var lastFocus = null;
   var ignoreFocusChanges = false;
   var focusAfterClose = null;
+  var modalTrigger = null;
 
   const triggeringHash = "#get-in-touch";
 
@@ -132,17 +133,31 @@
     modals.forEach(function (modal) {
       toggleModal(modal, false, false);
     });
+    if (modalTrigger) {
+      modalTrigger.setAttribute("aria-expanded", false);
+    }
   }
 
   // Add click handler for clicks on elements with aria-controls
-  document.addEventListener("click", function (event) {
-    var targetControls = event.target.getAttribute("aria-controls");
-    if (targetControls) {
-      event.preventDefault();
+  document.addEventListener("click", function (e) {
+    const isModalTrigger = e.target.closest(".js-invoke-modal");
+    const isCloseButton = e.target.closest(".p-modal-close-button");
+    if (isModalTrigger) modalTrigger = isModalTrigger;
+    if (isModalTrigger || isCloseButton) {
+      e.preventDefault();
 
-      toggleModal(document.getElementById(targetControls), event.target);
+      const targetControls = e.target.getAttribute("aria-controls");
+      const toggleValue = Boolean(isModalTrigger);
+      toggleModal(
+        document.getElementById(targetControls),
+        e.target,
+        toggleValue
+      );
+
+      if (modalTrigger) {
+        modalTrigger.setAttribute("aria-expanded", toggleValue);
+      }
     }
-
     return false;
   });
 
@@ -217,25 +232,6 @@ function validateCheckbox(event, fieldsetId) {
   }
 }
 
-function getRadioItemValue(fieldset) {
-  const selectedRadio = fieldset.querySelector(
-    "input[name='how-many-machines-do-you-have']:checked"
-  );
-  return selectedRadio ? selectedRadio.value : "";
-}
-
-function getCheckboxItemsAsCSV(fieldset) {
-  if (fieldset) {
-    const checkboxes = Array.from(
-      fieldset.querySelectorAll("input[class='p-checkbox__input']")
-    );
-    return checkboxes
-      .filter((item) => item.checked)
-      .map((item) => item.value)
-      .join(", ");
-  }
-}
-
 function getCustomFields(event) {
   var message = "";
   var formFields = document.querySelectorAll(".js-formfield");
@@ -274,10 +270,7 @@ function getCustomFields(event) {
         case "checkbox":
           if (input.checked) {
             if (fieldsetForm) {
-              var labelId = input.getAttribute("aria-labelledby");
-              var span = document.getElementById(labelId);
-              var labelText = span ? span.innerText : "";
-              message += input.value + "-" + labelText + comma + " ";
+              message += input.value + comma + " ";
             } else {
               // Forms that have column separation
               var subSectionText = "";

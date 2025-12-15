@@ -1,7 +1,7 @@
 <div class="p-modal" style="display: none;" id="executive-summit-modal">
   <div class="p-modal__dialog js-modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
     <header class="p-modal__header" style="display: block; border-bottom: 0;">
-      <button class="p-modal__close" aria-controls="executive-summit-modal" aria-label="Close active modal" style="margin-left: -1rem">Close</button>
+      <button class="p-modal__close p-modal-close-button js-close-modal" aria-controls="executive-summit-modal" aria-label="Close active modal" style="margin-left: -1rem">Close</button>
       <h2 class="p-modal__title u-sv1" id="modal-title">Contact Canonical</h2>
     </header>
     <div class="js-pagination js-pagination--1">
@@ -20,11 +20,11 @@
                   <input required id="lastName" name="lastName" maxlength="255" type="text"/>
                 </li>
                 <li class="p-list__item">
-                  <label for="title">Job title:</label>
+                  <label class="is-required" for="title">Job title:</label>
                   <input required id="title" name="title" maxlength="255" type="text" />
                 </li>
                 <li class="p-list__item">
-                  <label for="company">Company:</label>
+                  <label class="is-required" for="company">Company:</label>
                   <input required id="company" name="company" maxlength="255" type="text"/>
                 </li>
                 <li class="p-list__item">
@@ -52,7 +52,7 @@
                     <span class="p-checkbox__label" id="canonicalUpdatesOptIn">I agree to receive information about Canonical's products and services.</span>
                   </label>
                 </li>
-                <li class="p-list__item">In submitting this form, I confirm that I have read and agree to <a href="https://ubuntu.com/legal/data-privacy/contact" target="_blank">Canonical's Privacy Notice</a> and <a href="https://ubuntu.com/legal/data-privacy" target="_blank">Privacy Policy</a>.</li>
+                <li class="p-list__item">In submitting this form, I confirm that I have read and agree to <a href="/legal/data-privacy/contact" target="_blank">Canonical's Privacy Notice</a> and <a href="/legal/data-privacy" target="_blank">Privacy Policy</a>.</li>
                 {# These are honey pot fields to catch bots #}
                 <li class="u-off-screen">
                   <label class="website" for="website">Website:</label>

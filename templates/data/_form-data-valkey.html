@@ -6,7 +6,7 @@
           <h2 class="p-heading--1">Talk to our Valkey experts</h2>
         </div>
         <div class="col">
-          <button class="p-modal__close p-modal-close-button"
+          <button class="p-modal__close p-modal-close-button js-close-modal"
                   aria-controls="data-valkey-modal"
                   aria-label="Close active modal"
                   style="margin-top: 0">Close</button>
@@ -18,8 +18,7 @@
             <textarea id="Comments_from_lead__c"
                       name="Comments_from_lead__c"
                       aria-label="Anything you'd like to communicate about your needs or interests?"
-                      rows="3"
-                      placeholder="Anything you'd like to communicate about your needs or interests?"></textarea>
+                      rows="3"></textarea>
             <div class="p-section--shallow p-form-validation">
               <label for="firstName" class="is-required">First name:</label>
               <input required
@@ -50,10 +49,10 @@
                 <label for="phone">Phone number:</label>
                 <input id="phone" name="phone" maxlength="255" type="tel" />
               </div>
-              <label for="company">Company:</label>
-              <input id="company" name="company" maxlength="255" type="text" />
-              <label for="title">Job title:</label>
-              <input id="title" name="title" maxlength="255" type="text" />
+              <label class="is-required" for="company">Company:</label>
+              <input required id="company" name="company" maxlength="255" type="text" />
+              <label class="is-required" for="title">Job title:</label>
+              <input required id="title" name="title" maxlength="255" type="text" />
             </div>
 
             <div class="p-section--shallow">
@@ -66,8 +65,7 @@
                 <span class="p-checkbox__label" id="canonicalUpdatesOptIn">I agree to receive information about Canonical's products and services.</span>
               </label>
               <p>
-                By submitting this form, I confirm that I have read and agree to Canonical's <a href="https://ubuntu.com/legal/terms-and-policies/privacy-policy"
-    target="_blank">Privacy Policy</a>.
+                By submitting this form, I confirm that I have read and agree to <a href="/legal/data-privacy/contact">Canonical's Privacy Notice</a> and <a href="/legal/data-privacy">Privacy Policy</a>.
               </p>
             </div>
             {# These are honey pot fields to catch bots #}

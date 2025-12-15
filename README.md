@@ -1,9 +1,8 @@
-# ![Canonical](https://assets.ubuntu.com/v1/9ce5bce5-canonical-logo3.png?h=32 "Canonical")&nbsp;canonical.com
+# ![Canonical](https://assets.ubuntu.com/v1/efc6527b-CoF%20@2x.png?h=32 "Canonical")&nbsp;canonical.com
 
 **The new codebase, to replace [the old one](https://github.com/canonical-web-and-design/www.canonical.com/).**
 
-[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/canonical.com.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/canonical.com)
-[![Code coverage](https://codecov.io/gh/canonical-web-and-design/canonical.com/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/canonical.com)
+[![Code coverage](https://codecov.io/gh/canonical/canonical.com/graph/badge.svg?token=7W2jD8mIeu)](https://codecov.io/gh/canonical/canonical.com)
 
 This is the repository for the canonical.com website.
 
@@ -13,7 +12,7 @@ This website is written with the help of the [flask](http://flask.pocoo.org/) fr
 
 ## Development
 
-The simplest way to run the site is with [the `dotrun` snap](https://github.com/canonical-web-and-design/dotrun/):
+The simplest way to run the site is with [the `dotrun` snap](https://github.com/canonical/dotrun/):
 
 ```bash
 dotrun
@@ -22,6 +21,10 @@ dotrun
 Afterwards the website will be available at <http://localhost:8002>.
 
 When you start changing files, the server should reload and make the changes available immediately.
+
+## Environment variables
+
+Environment variables are read from the available shell. For the charm, these are prepended with the prefix `FLASK_`, which we strip before re-inserting them into the environment.
 
 ## Greenhouse API
 

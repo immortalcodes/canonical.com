@@ -8,7 +8,7 @@
             <p>Fill in this form and a member of our team will be in touch shortly.</p>
           </div>
           <div class="col">
-            <button class="p-modal__close p-modal-close-button u-no-margin--top"
+            <button class="p-modal__close p-modal-close-button js-close-modal u-no-margin--top"
                     aria-controls="infrastructure-modal"
                     aria-label="Close active modal">Close</button>
             <form action="https://ubuntu.com/marketo/submit"
@@ -55,6 +55,13 @@
                             rows="4"
                             maxlength="2000"></textarea>
                 </li>
+                <li class="p-list__item">
+                  <label for="selfReportedAttribution">How did you hear about us?</label>
+                  <input id="selfReportedAttribution"
+                         name="selfReportedAttribution"
+                         maxlength="255"
+                         type="text" />
+                </li>
                 <div>
                   <label class="p-checkbox">
                     <input class="p-checkbox__input"
@@ -68,7 +75,7 @@
               </ul>
 
               <div class="p-section--shallow">
-                By submitting this form, I confirm that I have read and agree to <a href="https://www.ubuntu.com/legal/data-privacy">Canonical's Privacy Policy</a>.
+                By submitting this form, I confirm that I have read and agree to <a href="/legal/data-privacy">Canonical's Privacy Policy</a>.
               </div>
               {# These are honey pot fields to catch bots #}
               <div class="u-off-screen">

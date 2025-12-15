@@ -39,7 +39,7 @@
             </p>
           </div>
           <hr class="p-rule--muted" />
-          <a class="p-button--positive"
+          <a class="p-button--positive js-invoke-modal"
              href="/contact-us"
              aria-controls="microcloud-modal">Get in touch</a>
           <br class="u-hide--medium u-hide--large" aria-hidden="true" />
@@ -386,7 +386,7 @@
         </ul>
         <hr class="p-rule--muted" />
         <p>
-          <a href="https://canonical-microcloud.readthedocs-hosted.com/en/stable/microcloud/tutorial/get_started/">Deploy your own MicroCloud following this tutorial&nbsp;&rsaquo;</a>
+          <a href="https://documentation.ubuntu.com/microcloud/stable/microcloud/tutorial/get_started/">Deploy your own MicroCloud following this tutorial&nbsp;&rsaquo;</a>
         </p>
       </div>
     </div>
@@ -443,10 +443,10 @@
             }}
           </div>
           <div class="p-logo-section__item">
-            {{ image(url="https://assets.ubuntu.com/v1/fa3697a9-dell-logo.png",
+            {{ image(url="https://assets.ubuntu.com/v1/231d8b6f-Dell_logo.png",
                         alt="Dell",
-                        width="172",
-                        height="312",
+                        width="276",
+                        height="385",
                         hi_def=True,
                         loading="lazy",
                         attrs={"class": "p-logo-section__logo"}) | safe
@@ -507,10 +507,6 @@
   <script src="/static/js/typer.js" defer></script>
   <script defer src="{{ versioned_static('js/modals.js') }}"></script>
 
-  {% with %}
-    {% set returnURL = "https://canonical.com//microcloud#success" %}
-
-    {% include "microcloud/_microcloud-modal.html" %}
-  {% endwith %}
+  {{ load_form("/microcloud") | safe }}
 
 {% endblock content %}
